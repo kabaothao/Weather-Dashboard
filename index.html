@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="./Assets/logo.png" />
+
+    <title>Weather Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <h1>
+        <i class="fa fa-tachometer" aria-hidden="true"></i>
+        Weather Dashboard
+      </h1>
+      <input id="cityInput" placeholder="Search for a City" />
+      <button onclick="getWeatherForecast()">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </nav>
+    <div class="bg">
+      <div class="clouds"></div>
+      <div class="content">
+        <h1 id="cityName"></h1>
+        <div id="weatherDescription">Sunny</div>
+        <div class="degrees"><span id="temperature"></span>&#176;</div>
+        <div class="grid">
+          <div class="grid-right">
+            H: <span id="highTemperature"></span>&#176;
+          </div>
+          <div class="grid-left">
+            L: <span id="lowTemperature"></span>&#176;
+          </div>
+
+          <div class="grid-right">Wind:</div>
+          <div id="wind" class="grid-left"></div>
+
+          <div class="grid-right">Humidity:</div>
+          <div class="grid-left">
+            <span id="humidity"></span><img src="./Assets/humidity.png" />
+          </div>
+
+          <div class="grid-right">UV Index:</div>
+          <div class="grid-left">
+            <span id="uvIndex"></span>
+            <div id="uvColor"></div>
+          </div>
+        </div>
+
+        <div id="dailyWeatherForecast" class="forecast"></div>
+
+        <div class="searchHistory">
+          <div>Search History</div>
+          <div id="cities" class="pt-15"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</html>
